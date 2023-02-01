@@ -11,14 +11,13 @@ getUsers(req, res) {
 // GET single user
 getSingleUser(req, res) {
   User.findOne({ _id: req.params.userId })
+  .select('-__v')
   .populate('thoughts')
   .populate('friends')
-  .select('-__v')
+
   .then((user) => 
     !user
-    //if
       ? res.status(404).json({ message: 'No User Found!' })
-      //else
       : res.json(user)
   )
   .catch((err) => res.status(500).json(err));

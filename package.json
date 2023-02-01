@@ -1,5 +1,5 @@
 {
-    "name": "Hi",
+    "name": "SocNetAPI",
     "version": "1.0.1",
     "description": "Mongoose back-end social network",
     "main": "index.js",
